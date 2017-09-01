@@ -10,13 +10,17 @@ export const store = new Vuex.Store({
         imageUrl: 'https://thenypost.files.wordpress.com/2017/04/new-york.jpg?quality=90&strip=all&w=1200',
         id: 'asds123',
         title: 'Meetup in New York',
-        date: '2017-09-01'
+        date: '2017-09-01',
+        location: 'New York',
+        description: 'We will have fun here!!!!!!!'
       },
       {
         imageUrl: 'https://lonelyplanetimages.imgix.net/mastheads/GettyImages-500759045_super.jpg?sharp=10&vib=20&w=1200',
         id: 'asds123123123',
         title: 'Meetup in Paris',
-        date: '2017-09-02'
+        date: '2017-09-02',
+        location: 'Paris',
+        description: 'We will have fun here!!!!!!!'
       }
     ],
     user: {
