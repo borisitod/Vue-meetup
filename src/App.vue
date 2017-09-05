@@ -15,7 +15,7 @@
                     </v-list-tile-action>
                     <v-list-tile-content>{{ item.title }}</v-list-tile-content>
                 </v-list-tile>
-                <v-list-tile v-if="userIsAutehnticated" @click="onLogout">
+                <v-list-tile v-if="userIsAuthenticated" @click="onLogout">
                     <v-list-tile-action>
                         <v-icon>exit_to_app</v-icon>
                     </v-list-tile-action>
@@ -41,7 +41,7 @@
                     <v-icon left dark>{{ item.icon }}</v-icon>
                     {{ item.title }}
                 </v-btn>
-                <v-btn v-if="userIsAutehnticated" flat @click="onLogout">
+                <v-btn v-if="userIsAuthenticated" flat @click="onLogout">
                     <v-icon left dark>exit_to_app</v-icon>
                     Logout
                 </v-btn>
@@ -66,7 +66,7 @@
           {icon: 'face', title: 'Sign Up', link: '/signup'},
           {icon: 'lock_open', title: 'Sign In', link: '/signin'}
         ]
-        if (this.userIsAutehnticated) {
+        if (this.userIsAuthenticated) {
           menuItems = [
             {icon: 'supervisor_account', title: 'View Meetups', link: '/meetups'},
             {icon: 'room', title: 'Organize Meetup', link: '/meetup/new'},
@@ -75,7 +75,7 @@
         }
         return menuItems
       },
-      userIsAutehnticated () {
+      userIsAuthenticated () {
         return this.$store.getters.user !== null && this.$store.getters.user !== undefined
       }
     },
