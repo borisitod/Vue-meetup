@@ -10,7 +10,7 @@
                 <v-card>
                     <v-card-text>
                         <v-container>
-                            <form @submit.prevent="onSignin">
+                            <v-form @submit.prevent="onSignin" v-model="valid">
                                 <v-layout row>
                                     <v-flex xs12>
                                         <v-text-field
@@ -47,7 +47,7 @@
                                         </v-btn>
                                     </v-flex>
                                 </v-layout>
-                            </form>
+                            </v-form>
                         </v-container>
                     </v-card-text>
                 </v-card>
@@ -60,6 +60,7 @@
   export default {
     data () {
       return {
+        valid: false,
         email: '',
         password: '',
         rules: {
