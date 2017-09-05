@@ -12,7 +12,7 @@
             </v-flex>
         </v-layout>
         <v-layout row wrap v-else>
-            <v-flex xs12>
+            <v-flex xs12 sm10 md8 offset-sm1 offset-md2>
                 <v-card>
                     <v-card-title>
                        <h6 class="primary-text">{{ meetup.title }}</h6>
@@ -27,6 +27,12 @@
                     ></v-card-media>
                     <v-card-text>
                         <div class="info--text">{{ meetup.date | date }} - {{ meetup.location }}</div>
+                        <app-edit-meetup-date-dialog
+                                :meetup="meetup" v-if="userIsCreator">
+                        </app-edit-meetup-date-dialog>
+                        <app-edit-meetup-time-dialog
+                                :meetup="meetup" v-if="userIsCreator">
+                        </app-edit-meetup-time-dialog>
                         <div>{{ meetup.description }}</div>
                     </v-card-text>
                     <v-card-actions>
